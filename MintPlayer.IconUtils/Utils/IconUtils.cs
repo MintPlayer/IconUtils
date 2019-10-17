@@ -20,12 +20,23 @@ namespace MintPlayer.IconUtils.Utils
                 // byte[] Icon.GetIconData(Icon icon);
                 var dm = new DynamicMethod("GetIconData", typeof(byte[]), new Type[] { typeof(Icon) }, typeof(Icon));
 
-                var ic = new Icon(@"C:\Users\pidc\Pictures\icon_1.ico");
-
                 // Reference to the Icon._iconData private field
-                // - .NET Framework: iconData
-                // - .NET Core: _iconData
-                var fi = typeof(Icon).GetField("_iconData", BindingFlags.Instance | BindingFlags.NonPublic);
+                FieldInfo fi = null;
+                var fieldNames = typeof(Icon).GetFields(BindingFlags.Instance | BindingFlags.NonPublic).Select(f => f.Name);
+                if (fieldNames.Contains("iconData"))
+                {
+                    // .NET Framework
+                    fi = typeof(Icon).GetField("iconData", BindingFlags.Instance | BindingFlags.NonPublic);
+                }
+                else if (fieldNames.Contains("_iconData"))
+                {
+                    // .NET Core
+                    fi = typeof(Icon).GetField("_iconData", BindingFlags.Instance | BindingFlags.NonPublic);
+                }
+                else
+                {
+                    throw new Exception("IconData field does not exist");
+                }
 
                 // Emit commands to 
                 var gen = dm.GetILGenerator();
@@ -35,7 +46,6 @@ namespace MintPlayer.IconUtils.Utils
                 gen.Emit(OpCodes.Ldfld, fi);
                 // - Return the byte array
                 gen.Emit(OpCodes.Ret);
-
 
                 getIconData = (GetIconDataDelegate)dm.CreateDelegate(typeof(GetIconDataDelegate));
 
