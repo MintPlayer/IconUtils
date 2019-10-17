@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace MintPlayer.IconUtils
 {
@@ -37,6 +35,15 @@ namespace MintPlayer.IconUtils
                 default:
                     throw new InvalidOperationException(@"Input file must have one of following extensions: "".exe"", "".ico"", "".cur""");
             }
+        }
+
+        public static List<Icon> Split(Icon icon)
+        {
+            // Check if icon is provided
+            if (icon == null)
+                throw new ArgumentNullException(nameof(icon));
+
+            return Utils.IconUtils.Split(icon);
         }
 
         private static List<Icon> ExtractIconsFromExe(string exeFileName)
