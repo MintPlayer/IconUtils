@@ -10,7 +10,7 @@
     <RepositoryUrl>https://github.com/MintPlayer/IconUtils</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Icon, Split, Extract</PackageTags>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

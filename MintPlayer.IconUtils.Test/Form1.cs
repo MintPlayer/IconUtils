@@ -30,7 +30,6 @@ namespace MintPlayer.IconUtils.Test
 
             if (ofd.ShowDialog(this) == DialogResult.OK)
             {
-                //var icons = MintPlayer.IconUtils.IconExtractor.Split(ofd.FileName);
                 var icons = IconExtractor.Split(ofd.FileName);
                 
                 var folder = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(ofd.FileName), "Split");
