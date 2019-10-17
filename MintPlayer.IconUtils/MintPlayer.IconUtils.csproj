@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Pieterjan De Clippel</Authors>
+    <Company>MintPlayer</Company>
+    <Description>Extract Icons</Description>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/MintPlayer/IconUtils</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MintPlayer/IconUtils</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>Icon, Split, Extract</PackageTags>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

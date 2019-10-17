@@ -32,7 +32,7 @@ namespace MintPlayer.IconUtils.Test
             {
                 //var icons = MintPlayer.IconUtils.IconExtractor.Split(ofd.FileName);
                 var icons = IconExtractor.Split(ofd.FileName);
-
+                
                 var folder = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(ofd.FileName), "Split");
                 if (!System.IO.Directory.Exists(folder)) System.IO.Directory.CreateDirectory(folder);
                 var index = 1;

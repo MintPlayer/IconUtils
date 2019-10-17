@@ -20,8 +20,8 @@ namespace MintPlayer.IconUtils
                 throw new ArgumentNullException(nameof(filename));
 
             // Check if file exists
-            if (!System.IO.File.Exists(filename))
-                throw new System.IO.FileNotFoundException("File not found", filename);
+            if (!File.Exists(filename))
+                throw new FileNotFoundException("File not found", filename);
 
             // Load the icon
             switch (Path.GetExtension(filename))
@@ -32,7 +32,7 @@ namespace MintPlayer.IconUtils
                 case ".cur":
                     {
                         var icon = new Icon(filename);
-                        return IconUtils.Utils.IconUtils.Split(icon);
+                        return Utils.IconUtils.Split(icon);
                     }
                 default:
                     throw new InvalidOperationException(@"Input file must have one of following extensions: "".exe"", "".ico"", "".cur""");
