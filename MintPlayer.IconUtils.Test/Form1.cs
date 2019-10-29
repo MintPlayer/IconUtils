@@ -17,7 +17,7 @@ namespace MintPlayer.IconUtils.Test
             InitializeComponent();
         }
 
-
+        // C:\Program Files\Mozilla Firefox\firefox.exe
         private void btnOpenIconFile_Click(object sender, EventArgs e)
         {
             var ofd = new OpenFileDialog

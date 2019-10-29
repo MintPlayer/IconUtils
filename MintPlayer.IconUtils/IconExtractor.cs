@@ -30,14 +30,14 @@ namespace MintPlayer.IconUtils
                 case ".cur":
                     {
                         var icon = new Icon(filename);
-                        return Utils.IconUtils.Split(icon);
+                        return ExtractImagesFromIcon(icon);
                     }
                 default:
                     throw new InvalidOperationException(@"Input file must have one of following extensions: "".exe"", "".ico"", "".cur""");
             }
         }
 
-        public static List<Icon> Split(Icon icon)
+        public static List<Icon> ExtractImagesFromIcon(Icon icon)
         {
             // Check if icon is provided
             if (icon == null)
