@@ -1,4 +1,7 @@
-# IconExtractor
+# MintPlayer.IconUtils
+[![NuGet Version](https://img.shields.io/nuget/v/MintPlayer.IconUtils.svg?style=flat)](https://www.nuget.org/packages/MintPlayer.IconUtils)
+[![NuGet](https://img.shields.io/nuget/dt/MintPlayer.IconUtils.svg?style=flat)](https://www.nuget.org/packages/MintPlayer.IconUtils)
+
 Split icons into multiple images
 ## NuGet package
 https://www.nuget.org/packages/MintPlayer.IconUtils/
