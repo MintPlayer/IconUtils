@@ -1,6 +1,7 @@
 # MintPlayer.IconUtils
 [![NuGet Version](https://img.shields.io/nuget/v/MintPlayer.IconUtils.svg?style=flat)](https://www.nuget.org/packages/MintPlayer.IconUtils)
 [![NuGet](https://img.shields.io/nuget/dt/MintPlayer.IconUtils.svg?style=flat)](https://www.nuget.org/packages/MintPlayer.IconUtils)
+[![Build Status](https://travis-ci.org/MintPlayer/MintPlayer.IconUtils.svg?branch=master)](https://travis-ci.org/MintPlayer/MintPlayer.IconUtils)
 
 Split icons into multiple images
 ## NuGet package

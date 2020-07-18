@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageId>MintPlayer.IconUtils</PackageId>
     <Authors>Pieterjan De Clippel</Authors>
     <Company>MintPlayer</Company>
     <Description>Extract Icons</Description>
@@ -10,7 +13,7 @@
     <RepositoryUrl>https://github.com/MintPlayer/IconUtils</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Icon, Split, Extract</PackageTags>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
