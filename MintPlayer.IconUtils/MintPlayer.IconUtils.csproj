@@ -9,11 +9,11 @@
     <Company>MintPlayer</Company>
     <Description>Extract Icons</Description>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/MintPlayer/IconUtils</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/MintPlayer/IconUtils</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/MintPlayer/MintPlayer.IconUtils</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MintPlayer/MintPlayer.IconUtils</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Icon, Split, Extract</PackageTags>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
