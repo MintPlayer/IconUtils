@@ -2,6 +2,7 @@
 [![NuGet Version](https://img.shields.io/nuget/v/MintPlayer.IconUtils.svg?style=flat)](https://www.nuget.org/packages/MintPlayer.IconUtils)
 [![NuGet](https://img.shields.io/nuget/dt/MintPlayer.IconUtils.svg?style=flat)](https://www.nuget.org/packages/MintPlayer.IconUtils)
 [![Build Status](https://travis-ci.org/MintPlayer/MintPlayer.IconUtils.svg?branch=master)](https://travis-ci.org/MintPlayer/MintPlayer.IconUtils)
+[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Split icons into multiple images
 ## NuGet package
