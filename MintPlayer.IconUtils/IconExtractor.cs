@@ -15,11 +15,15 @@ namespace MintPlayer.IconUtils
         {
             // Check if filename is provided
             if (string.IsNullOrEmpty(filename))
+            {
                 throw new ArgumentNullException(nameof(filename));
+            }
 
             // Check if file exists
             if (!File.Exists(filename))
+            {
                 throw new FileNotFoundException("File not found", filename);
+            }
 
             // Load the icon
             switch (Path.GetExtension(filename))
@@ -28,10 +32,8 @@ namespace MintPlayer.IconUtils
                     return ExtractIconsFromExe(filename);
                 case ".ico":
                 case ".cur":
-                    {
-                        var icon = new Icon(filename);
-                        return ExtractImagesFromIcon(icon);
-                    }
+                    var icon = new Icon(filename);
+                    return ExtractImagesFromIcon(icon);
                 default:
                     throw new InvalidOperationException(@"Input file must have one of following extensions: "".exe"", "".ico"", "".cur""");
             }
@@ -41,7 +43,9 @@ namespace MintPlayer.IconUtils
         {
             // Check if icon is provided
             if (icon == null)
+            {
                 throw new ArgumentNullException(nameof(icon));
+            }
 
             return Utils.IconUtils.Split(icon);
         }
@@ -58,7 +62,9 @@ namespace MintPlayer.IconUtils
                 hIcon = DllImport.Kernel32.LoadLibraryEx(exeFileName, IntPtr.Zero, Constants.Kernel32.LOAD_LIBRARY_AS_DATAFILE);
 
                 if (hIcon == IntPtr.Zero)
+                {
                     throw new Win32Exception("Failed to load the icon from disk");
+                }
 
                 // Buffer to store the raw data
                 var dataBuffer = new List<byte[]>();
@@ -77,8 +83,10 @@ namespace MintPlayer.IconUtils
                     // sizeof(ICONDIR) + sizeof(ICONDIRENTRY) * count
                     int len = 6 + 16 * count;
                     for (int i = 0; i < count; ++i)
+                    {
                         // GRPICONDIRENTRY.dwBytesInRes
                         len += BitConverter.ToInt32(dir, 6 + 14 * i + 8);
+                    }
                     #endregion
 
                     using (var dst = new BinaryWriter(new MemoryStream(len)))
@@ -134,7 +142,9 @@ namespace MintPlayer.IconUtils
             finally
             {
                 if (hIcon != IntPtr.Zero)
+                {
                     DllImport.Kernel32.FreeLibrary(hIcon);
+                }
             }
         }
 
@@ -144,19 +154,27 @@ namespace MintPlayer.IconUtils
 
             IntPtr hResInfo = DllImport.Kernel32.FindResource(hModule, name, type);
             if (hResInfo == IntPtr.Zero)
+            {
                 throw new Win32Exception();
+            }
 
             IntPtr hResData = DllImport.Kernel32.LoadResource(hModule, hResInfo);
             if (hResData == IntPtr.Zero)
+            {
                 throw new Win32Exception();
+            }
 
             IntPtr pResData = DllImport.Kernel32.LockResource(hResData);
             if (pResData == IntPtr.Zero)
+            {
                 throw new Win32Exception();
+            }
 
             uint size = DllImport.Kernel32.SizeofResource(hModule, hResInfo);
             if (size == 0)
+            {
                 throw new Win32Exception();
+            }
 
             byte[] buf = new byte[size];
             System.Runtime.InteropServices.Marshal.Copy(pResData, buf, 0, buf.Length);

@@ -1,0 +1,5 @@
+---
+exclude_paths:
+  - 'Helpers/**'
+  - 'MintPlayer.IconUtils.Test/**'
+  - 'MintPlayer.IconUtils.TestFramework/**'

@@ -3,10 +3,9 @@
 [![NuGet](https://img.shields.io/nuget/dt/MintPlayer.IconUtils.svg?style=flat)](https://www.nuget.org/packages/MintPlayer.IconUtils)
 [![Build Status](https://travis-ci.org/MintPlayer/MintPlayer.IconUtils.svg?branch=master)](https://travis-ci.org/MintPlayer/MintPlayer.IconUtils)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a3bb5690a393441cadbe6a119f6ecd9f)](https://www.codacy.com/gh/MintPlayer/MintPlayer.IconUtils?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MintPlayer/MintPlayer.IconUtils&amp;utm_campaign=Badge_Grade)
 
 Split icons into multiple images
-## NuGet package
-https://www.nuget.org/packages/MintPlayer.IconUtils/
 ## Installation
 ### NuGet package manager
 Open the NuGet package manager and install the **MintPlayer.IconUtils** package in the project

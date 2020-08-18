@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MintPlayer.IconUtils.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -15,10 +16,8 @@ namespace MintPlayer.IconUtils.Utils
         {
             try
             {
-
                 // Create dynamic method to access the Icon.iconData private field
-                // byte[] Icon.GetIconData(Icon icon);
-                var dm = new DynamicMethod("GetIconData", typeof(byte[]), new Type[] { typeof(Icon) }, typeof(Icon));
+                var dm = new DynamicMethod("GetIconData", typeof(byte[]), new[] { typeof(Icon) }, typeof(Icon));
 
                 // Reference to the Icon._iconData private field
                 FieldInfo fi = null;
@@ -35,7 +34,7 @@ namespace MintPlayer.IconUtils.Utils
                 }
                 else
                 {
-                    throw new Exception("IconData field does not exist");
+                    throw new InvalidOperationException("IconData field does not exist");
                 }
 
                 // Emit commands to 
@@ -52,6 +51,7 @@ namespace MintPlayer.IconUtils.Utils
             }
             catch (Exception ex)
             {
+                throw new ExtractException("Could not initialize IconUtils", ex);
             }
         }
 
@@ -83,7 +83,10 @@ namespace MintPlayer.IconUtils.Utils
         /// <returns>An array of System.Drawing.Icon.</returns>
         internal static List<Icon> Split(Icon icon)
         {
-            if (icon == null) throw new ArgumentNullException("icon");
+            if (icon == null)
+            {
+                throw new ArgumentNullException("icon");
+            }
 
             // Get an .ico file in memory, then split it into separate icons.
             var src = GetIconData(icon);
